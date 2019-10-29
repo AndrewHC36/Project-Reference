@@ -1,0 +1,94 @@
+# use this guide to help find common errors when initializing projects
+
+# USE GIT BASH
+
+#@@@ [SECTION PP] Precursor; setting-up
+
+# make sure to create the repository on the GitHub than come down to this file again to initialize the project
+# also copy down repository name too, we will need it later
+
+#@@@ [SECTION A] Beggining
+
+# goto root directory of the project
+cd <dir>
+
+#@@@ [SECTION B] Already setted to your project's root directory
+
+# intialize git to start tracking you project
+git init
+
+### IF NEEDED
+
+git config --global user.name <NAME>
+git config --global user.email <EMAIL>
+
+# check
+git config --list
+
+### END IF
+
+#@@@ [SECTION C] Pre-Config all setup; redo the git-origin thingy again
+
+# commit the initialization (also -m for message)
+git commit
+
+# add origin to the repository
+git remote add origin git@github.com:USERNAME/REPO_NAME
+
+### IF === fatal: remote origin already exits.
+
+# this is to remove the branch which in this is /origin/
+git remote rm origin
+
+#>>> GOTO [SECTION C]
+
+### END IF
+
+#@@@ [SECTION D] Redo the push origin process
+
+# push the origin to the master
+git push -u origin master
+
+### IF === [1st attempt] error: failed to push some refs to ...
+
+# if, warning: no common commits, there *will* be merge conflicts
+git pull
+
+#>>> GOTO [SECTION D]
+
+### IF === [2nd attempt] error: failed to push some refs to ...
+
+git pull origin master
+
+#>>> GOTO [SECTION D]
+
+### IF === [3rd attempt] error: failed to push some refs to ...
+
+git pull origin master
+
+# you will be popped-up with a file; close the file to accept the conflict
+git commit
+
+# goto bottom of your PyCharm to resolve the conflicting merges at the version control bar
+
+#>>> GOTO [SECTION D]
+
+### END IF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
