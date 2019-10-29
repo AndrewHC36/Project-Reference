@@ -52,6 +52,9 @@ git remote rm origin
 # push the origin to the master
 git push -u origin master
 
+### IF === fatal: Could not read from remote repository
+
+
 ### IF === [1st attempt] error: failed to push some refs to ...
 
 # if, warning: no common commits, there *will* be merge conflicts
