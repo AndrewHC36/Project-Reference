@@ -10,38 +10,38 @@
 #@@@ [SECTION A] Beggining
 
 # goto root directory of the project
-cd <dir>
+$ cd <dir>
 
 #@@@ [SECTION B] Already setted to your project's root directory
 
 # intialize git to start tracking you project
-git init
+$ git init
 
 ### IF NEEDED
 
-git config --global user.name <NAME>
-git config --global user.email <EMAIL>
+$ git config --global user.name <NAME>
+$ git config --global user.email <EMAIL>
 
 # check
-git config --list
+$ git config --list
 
 ### END IF
 
 #@@@ [SECTION C] Pre-Config all setup; redo the git-origin thingy again
 
-git add .
+$ git add .
 
 # commit the initialization (also -m for message)
 # file pop-up; close it to accept it (make sure you wrote the message)
-git commit -m <message>
+$ git commit -m <message>
 
 # add origin to the repository
-git remote add origin https://github.com:USERNAME/REPO_NAME.git
+$ git remote add origin https://github.com:USERNAME/REPO_NAME.git
 
 ### IF === fatal: remote origin already exits.
 
 # this is to remove the branch which in this is /origin/
-git remote rm origin
+$ git remote rm origin
 
 #>>> GOTO [SECTION C]
 
@@ -50,29 +50,16 @@ git remote rm origin
 #@@@ [SECTION D] Redo the push origin process
 
 # push the origin to the master
-git push -u origin master
+$ git push -u origin master
 
-### IF === [1st attempt] error: failed to push some refs to ...
+### IF === error: failed to push some refs to ...
 
-# if, warning: no common commits, there *will* be merge conflicts
-git pull
-
-#>>> GOTO [SECTION D]
-
-### IF === [2nd attempt] error: failed to push some refs to ...
-
-git pull origin master
-
-#>>> GOTO [SECTION D]
-
-### IF === [3rd attempt] error: failed to push some refs to ...
-
-git pull origin master
-
-# you will be popped-up with a file; close the file to accept the conflict
-git commit -m <message>
+$ git pull origin master --allow-unrelated-histories
 
 # goto bottom of your PyCharm to resolve the conflicting merges at the version control bar
+
+# you will be popped-up with a file; close the file to accept the conflict
+$ git commit -m <message>
 
 #>>> GOTO [SECTION D]
 
