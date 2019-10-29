@@ -36,7 +36,7 @@ git add .
 git commit -m <message>
 
 # add origin to the repository
-git remote add origin git@github.com:USERNAME/REPO_NAME
+git remote add origin https://github.com:USERNAME/REPO_NAME.git
 
 ### IF === fatal: remote origin already exits.
 
@@ -51,9 +51,6 @@ git remote rm origin
 
 # push the origin to the master
 git push -u origin master
-
-### IF === fatal: Could not read from remote repository
-
 
 ### IF === [1st attempt] error: failed to push some refs to ...
 
